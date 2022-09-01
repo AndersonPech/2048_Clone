@@ -1,0 +1,37 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4,1fr);
+    background-color: #bbada0;
+    column-gap: 0.5em;
+    row-gap: 0.5em;
+    width: 100%;
+    height: 100%;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+@mixin gridBlock {
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: xx-large;
+}
+
+
+.gridItem {
+    @include gridBlock;
+    background-color: #eee4da;
+}
+
+.grid4Item {
+    @include gridBlock;
+    background-color: #af3cb9;
+}
+
+.grid2Item {
+    @include gridBlock;
+    background-color: #56dae4;
+}

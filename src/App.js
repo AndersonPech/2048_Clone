@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from './styles/style.module.scss';
+import PageBody from './components/PageBody';
+import Grid from './Grid';
 
 function App() {
+  let grid = new Grid(16);
+  document.addEventListener('keydown', function(shiftDown) {
+    console.log('down')
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PageBody>
+      <p className={styles.p1}>  
+        2048 Clone
+      </p>
+      <button onClick={grid.startGame()}>Reset</button>
+      {grid.getGrid()}
+    </PageBody>
   );
 }
 
